@@ -6,6 +6,7 @@ interface LoginView {
 
     fun successLogin()
 
-    fun failLogin()
+    fun showProgress()
 
+    fun hideProgress()
 }

@@ -1,11 +1,15 @@
 package com.ps.pslibrary.injectionmodules;
 
+import com.ps.pslibrary.application.AndroidScheduler;
+import com.ps.pslibrary.application.ApplicationScheduler;
 import com.ps.pslibrary.application.LibraryApplication;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import pslibrary.api.login.LoginApi;
 import pslibrary.api.login.LoginBackendApi;
@@ -23,6 +27,11 @@ public class ServicesModule {
 
     public ServicesModule(LibraryApplication application) {
         this.application = application;
+    }
+
+    @Provides
+    ApplicationScheduler providesApplicationScheduler() {
+        return new AndroidScheduler(AndroidSchedulers.mainThread(), Schedulers.io());
     }
 
     //Sign up components

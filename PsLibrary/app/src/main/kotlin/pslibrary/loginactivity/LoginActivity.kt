@@ -2,6 +2,7 @@ package com.ps.pslibrary
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.bumptech.glide.Glide
 import com.ps.pslibrary.application.LibraryApplication
 import jp.wasabeef.glide.transformations.BlurTransformation
@@ -21,6 +22,14 @@ class LoginActivity : AppCompatActivity(), LoginView {
         setContentView(R.layout.activity_login)
 
         loginPresenter.attachView(this)
+
+        setUpComponents()
+    }
+
+    private fun setUpComponents() {
+        login_button.setOnClickListener {
+            loginPresenter.startLogin(login_input.text.toString(), password_input.text.toString())
+        }
     }
 
     override fun setBackground() {
@@ -33,7 +42,13 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
     }
 
-    override fun failLogin() {
+    override fun showProgress() {
+        login_button.text = ""
+        login_progress_bar.visibility = View.VISIBLE
+    }
 
+    override fun hideProgress() {
+        login_button.text = getString(R.string.log_in_text)
+        login_progress_bar.visibility = View.GONE
     }
 }

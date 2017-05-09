@@ -1,5 +1,7 @@
 package com.ps.pslibrary.injectionmodules;
 
+import com.ps.pslibrary.application.ApplicationScheduler;
+
 import dagger.Module;
 import dagger.Provides;
 import pslibrary.api.login.LoginApi;
@@ -12,7 +14,8 @@ public class PresenterModule {
     }
 
     @Provides
-    public LoginPresenter providesLoginPresenter(LoginApi loginApi) {
-        return new LoginPresenter(loginApi);
+    public LoginPresenter providesLoginPresenter(LoginApi loginApi,
+                                                 ApplicationScheduler applicationScheduler) {
+        return new LoginPresenter(loginApi, applicationScheduler);
     }
 }
