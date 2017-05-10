@@ -9,6 +9,7 @@ import com.ps.pslibrary.injectionmodules.ServicesModule;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import pslibrary.registeractivity.RegisterActivity;
 
 @Singleton
 @Component(modules = {
@@ -22,4 +23,6 @@ public interface UIDependencies {
     void inject(LibraryApplication application);
 
     void inject(LoginActivity activity);
+
+    void inject(RegisterActivity activity);
 }

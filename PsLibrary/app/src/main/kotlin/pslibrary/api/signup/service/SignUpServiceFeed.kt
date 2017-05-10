@@ -4,6 +4,7 @@ import okhttp3.OkHttpClient
 import pslibrary.api.DynamicUrlService
 import pslibrary.api.signup.SignUpBackendApi
 import pslibrary.api.signup.SignUpRetrofitApi
+import pslibrary.api.signup.model.SignUpBody
 
 open class SignUpServiceFeed(client: OkHttpClient) :
         DynamicUrlService<SignUpRetrofitApi>(client = client), SignUpBackendApi {
@@ -13,7 +14,7 @@ open class SignUpServiceFeed(client: OkHttpClient) :
                         login: String,
                         password: String,
                         librarianCode: String)
-            = restAdapter().signUp(name, lastname, login, password, librarianCode)
+            = restAdapter().signUp(SignUpBody(name, lastname, login, password, librarianCode))
 
     override fun getGenericParameter() = SignUpRetrofitApi::class.java
 }
