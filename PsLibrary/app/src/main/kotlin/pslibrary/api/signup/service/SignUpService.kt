@@ -11,6 +11,6 @@ class SignUpService(val signUpBackendApi: SignUpBackendApi) : SignUpApi {
                         lastname: String,
                         login: String,
                         password: String,
-                        librarianCode: String): Single<SignUpResponse>
+                        librarianCode: String?): Single<SignUpResponse>
             = signUpBackendApi.signUp(name, lastname, login, password, librarianCode)
 }

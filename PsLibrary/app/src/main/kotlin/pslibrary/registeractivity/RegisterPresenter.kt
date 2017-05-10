@@ -24,10 +24,14 @@ class RegisterPresenter(val signUpApi: SignUpApi,
                  lastName: String,
                  username: String,
                  password: String,
-                 librarianCode: String) {
+                 librarianCode: String?) {
+        registerView.showProgress()
         scheduler.schedule(signUpApi.signUp(name, lastName, username, password, librarianCode),
-                {},
-                {},
+                {
+                    registerView.hideProgress()
+                    registerView.successfulRegister()
+                },
+                { registerView.hideProgress() },
                 this)
     }
 }

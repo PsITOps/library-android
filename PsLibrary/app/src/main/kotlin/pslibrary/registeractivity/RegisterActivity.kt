@@ -36,7 +36,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
                     lastname_input.text.toString(),
                     login_input.text.toString(),
                     password_input.text.toString(),
-                    librarian_code_input.text.toString())
+                    if (librarian_code_input.text.isEmpty().not()) librarian_code_input.text.toString() else null)
         }
     }
 
@@ -44,6 +44,10 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
         Glide.with(this).load(R.drawable.library_login_background)
                 .bitmapTransform(BlurTransformation(this, 20))
                 .into(login_background)
+    }
+
+    override fun successfulRegister() {
+
     }
 
     override fun showProgress() {

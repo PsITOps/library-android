@@ -9,5 +9,5 @@ interface SignUpBackendApi {
                lastname: String,
                login: String,
                password: String,
-               librarianCode: String): Single<SignUpResponse>
+               librarianCode: String?): Single<SignUpResponse>
 }

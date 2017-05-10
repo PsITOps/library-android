@@ -13,7 +13,7 @@ open class SignUpServiceFeed(client: OkHttpClient) :
                         lastname: String,
                         login: String,
                         password: String,
-                        librarianCode: String)
+                        librarianCode: String?)
             = restAdapter().signUp(SignUpBody(name, lastname, login, password, librarianCode))
 
     override fun getGenericParameter() = SignUpRetrofitApi::class.java
