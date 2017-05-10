@@ -6,6 +6,8 @@ import com.ps.pslibrary.navigator.Navigator;
 
 import dagger.Module;
 import dagger.Provides;
+import pslibrary.customview.DialogProvider;
+import pslibrary.customview.SweetDialogProvider;
 
 @Module
 public class AppModule {
@@ -19,5 +21,10 @@ public class AppModule {
     @Provides
     Navigator provideNavigator() {
         return new AndroidNavigator(application);
+    }
+
+    @Provides
+    DialogProvider provideDialogProvider() {
+        return new SweetDialogProvider();
     }
 }

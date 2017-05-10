@@ -29,9 +29,16 @@ class RegisterPresenter(val signUpApi: SignUpApi,
         scheduler.schedule(signUpApi.signUp(name, lastName, username, password, librarianCode),
                 {
                     registerView.hideProgress()
-                    registerView.successfulRegister()
+                    if (it.valid) {
+                        registerView.successfulRegister()
+                    } else {
+                        registerView.showError(it.message)
+                    }
                 },
-                { registerView.hideProgress() },
+                {
+                    registerView.showError("There is problem with internet connection or service has been disabled")
+                    registerView.hideProgress()
+                },
                 this)
     }
 }

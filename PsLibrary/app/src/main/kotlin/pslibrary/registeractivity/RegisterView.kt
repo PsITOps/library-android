@@ -9,4 +9,6 @@ interface RegisterView {
     fun showProgress()
 
     fun hideProgress()
+
+    fun showError(errorMsg: String)
 }

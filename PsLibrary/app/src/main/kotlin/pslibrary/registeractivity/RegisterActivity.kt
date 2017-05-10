@@ -4,17 +4,21 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.bumptech.glide.Glide
 import com.ps.pslibrary.R
 import com.ps.pslibrary.application.LibraryApplication
 import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_register.*
+import pslibrary.customview.DialogProvider
 import javax.inject.Inject
 
 class RegisterActivity : AppCompatActivity(), RegisterView {
 
     @Inject
     lateinit var registerPresenter: RegisterPresenter
+    @Inject
+    lateinit var dialogProvider: DialogProvider
 
     companion object Factory {
         @JvmStatic fun createIntent(context: Context) = Intent(context, RegisterActivity::class.java)
@@ -51,10 +55,14 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
     }
 
     override fun showProgress() {
-
+        register_progress_bar.visibility = View.VISIBLE
     }
 
     override fun hideProgress() {
+        register_progress_bar.visibility = View.GONE
+    }
+
+    override fun showError(errorMsg: String) {
 
     }
 }
