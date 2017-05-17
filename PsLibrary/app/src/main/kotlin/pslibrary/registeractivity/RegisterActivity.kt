@@ -29,6 +29,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        registerPresenter.context = this
         registerPresenter.attachView(this)
 
         setUpComponents()
@@ -51,7 +52,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
     }
 
     override fun successfulRegister() {
-
+        onBackPressed()
     }
 
     override fun showProgress() {

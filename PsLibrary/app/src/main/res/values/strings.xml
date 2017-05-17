@@ -9,4 +9,6 @@
     <string name="input_name">Name</string>
 
     <string name="register_extra_note">* this field is not necessary</string>
+    <string name="register_success_dialog">You have created your new account!</string>
+    <string name="register_error_dialog">There is problem with internet connection or service has been disabled</string>
 </resources>

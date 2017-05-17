@@ -7,6 +7,7 @@ import dagger.Module;
 import dagger.Provides;
 import pslibrary.api.login.LoginApi;
 import pslibrary.api.signup.SignUpApi;
+import pslibrary.customview.DialogProvider;
 import pslibrary.loginactivity.LoginPresenter;
 import pslibrary.registeractivity.RegisterPresenter;
 
@@ -19,13 +20,15 @@ public class PresenterModule {
     @Provides
     public LoginPresenter providesLoginPresenter(LoginApi loginApi,
                                                  Navigator navigator,
-                                                 ApplicationScheduler applicationScheduler) {
-        return new LoginPresenter(loginApi, navigator, applicationScheduler);
+                                                 ApplicationScheduler applicationScheduler,
+                                                 DialogProvider dialogProvider) {
+        return new LoginPresenter(loginApi, navigator, applicationScheduler, dialogProvider);
     }
 
     @Provides
     public RegisterPresenter providesRegisterPresenter(SignUpApi signUpApi,
-                                                       ApplicationScheduler applicationScheduler) {
-        return new RegisterPresenter(signUpApi, applicationScheduler);
+                                                       ApplicationScheduler applicationScheduler,
+                                                       DialogProvider dialogProvider) {
+        return new RegisterPresenter(signUpApi, applicationScheduler, dialogProvider);
     }
 }

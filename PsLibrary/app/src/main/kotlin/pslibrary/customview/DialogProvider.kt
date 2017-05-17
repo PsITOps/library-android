@@ -13,4 +13,6 @@ interface DialogProvider {
                         msg: String,
                         confirmButtonAction: () -> Unit = {},
                         dismissAction: () -> Unit = {})
+
+    fun dismissDialog()
 }

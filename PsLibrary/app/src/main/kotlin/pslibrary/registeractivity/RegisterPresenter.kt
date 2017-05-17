@@ -1,13 +1,18 @@
 package pslibrary.registeractivity
 
+import android.content.Context
+import com.ps.pslibrary.R
 import com.ps.pslibrary.application.ApplicationScheduler
 import com.ps.pslibrary.base.BaseMvpPresenter
 import pslibrary.api.signup.SignUpApi
+import pslibrary.customview.DialogProvider
 
 class RegisterPresenter(val signUpApi: SignUpApi,
-                        val scheduler: ApplicationScheduler) : BaseMvpPresenter<RegisterView>() {
+                        val scheduler: ApplicationScheduler,
+                        val dialogProvider: DialogProvider) : BaseMvpPresenter<RegisterView>() {
 
     lateinit var registerView: RegisterView
+    lateinit var context: Context
 
     override fun attachView(view: RegisterView) {
         super.attachView(view)
@@ -30,15 +35,23 @@ class RegisterPresenter(val signUpApi: SignUpApi,
                 {
                     registerView.hideProgress()
                     if (it.valid) {
-                        registerView.successfulRegister()
+                        dialogProvider.showSuccessDialog(context, context.getString(R.string.register_success_dialog), onSuccessDialog(), onSuccessDialog())
                     } else {
-                        registerView.showError(it.message)
+                        dialogProvider.showErrorDialog(context, it.message, onErrorButton())
                     }
                 },
                 {
-                    registerView.showError("There is problem with internet connection or service has been disabled")
                     registerView.hideProgress()
+                    dialogProvider.showErrorDialog(context, context.getString(R.string.register_error_dialog), onErrorButton())
                 },
                 this)
+    }
+
+    private fun onSuccessDialog() = {
+        registerView.successfulRegister()
+    }
+
+    private fun onErrorButton() = {
+        dialogProvider.dismissDialog()
     }
 }
