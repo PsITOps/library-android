@@ -24,10 +24,6 @@ class LoginPresenter(val loginApi: LoginApi,
         loginView.setBackground()
     }
 
-    override fun detachView() {
-        super.detachView()
-    }
-
     fun startLogin(login: String, password: String) {
         loginView.showProgress()
         scheduler.schedule(loginApi.signIn(login, password),

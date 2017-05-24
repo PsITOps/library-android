@@ -11,6 +11,10 @@ import dagger.Provides;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
+import pslibrary.api.books.BooksApi;
+import pslibrary.api.books.BooksBackendApi;
+import pslibrary.api.books.service.BooksService;
+import pslibrary.api.books.service.BooksServiceFeed;
 import pslibrary.api.login.LoginApi;
 import pslibrary.api.login.LoginBackendApi;
 import pslibrary.api.login.service.LoginService;
@@ -60,5 +64,19 @@ public class ServicesModule {
     @Singleton
     public LoginApi providesLoginService(LoginBackendApi loginBackendApi) {
         return new LoginService(loginBackendApi);
+    }
+
+    // Books components
+
+    @Provides
+    @Singleton
+    public BooksBackendApi providesBooksBackendApi(OkHttpClient client) {
+        return new BooksServiceFeed(client);
+    }
+
+    @Provides
+    @Singleton
+    public BooksApi provideBooksService(BooksBackendApi booksBackendApi) {
+        return new BooksService(booksBackendApi);
     }
 }

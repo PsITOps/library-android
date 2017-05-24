@@ -5,8 +5,10 @@ import com.ps.pslibrary.navigator.Navigator;
 
 import dagger.Module;
 import dagger.Provides;
+import pslibrary.api.books.BooksApi;
 import pslibrary.api.login.LoginApi;
 import pslibrary.api.signup.SignUpApi;
+import pslibrary.booksactivity.BooksPresenter;
 import pslibrary.customview.DialogProvider;
 import pslibrary.loginactivity.LoginPresenter;
 import pslibrary.registeractivity.RegisterPresenter;
@@ -32,5 +34,12 @@ public class PresenterModule {
                                                        ApplicationScheduler applicationScheduler,
                                                        DialogProvider dialogProvider) {
         return new RegisterPresenter(signUpApi, applicationScheduler, dialogProvider);
+    }
+
+    @Provides
+    public BooksPresenter providesBooksPresenter(BooksApi booksApi,
+                                                 ApplicationScheduler applicationScheduler,
+                                                 UserProvider userProvider) {
+        return new BooksPresenter(booksApi, applicationScheduler, userProvider);
     }
 }
