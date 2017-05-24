@@ -20,7 +20,7 @@ class SweetDialogProvider : DialogProvider {
 
         pDialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE).apply {
             progressHelper.barColor = Color.parseColor("#5ce80d")
-            titleText = "Success"
+            titleText = "Sukces"
             contentText = msg
             confirmText = "OK"
             setConfirmClickListener { confirmButtonAction.invoke() }
@@ -36,7 +36,7 @@ class SweetDialogProvider : DialogProvider {
             progressHelper.barColor = Color.parseColor("#e80c17")
             titleText = "Error"
             contentText = msg
-            confirmText = "Try again"
+            confirmText = "Spróbuj ponownie"
             setConfirmClickListener { confirmButtonAction.invoke() }
             setOnDismissListener { dismissAction.invoke() }
         }

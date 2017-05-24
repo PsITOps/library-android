@@ -5,6 +5,7 @@ import com.ps.pslibrary.injectionmodules.AppModule;
 import com.ps.pslibrary.injectionmodules.NetworkModule;
 import com.ps.pslibrary.injectionmodules.PresenterModule;
 import com.ps.pslibrary.injectionmodules.ServicesModule;
+import com.ps.pslibrary.injectionmodules.UserModule;
 
 @SuppressWarnings({"deprecation"})
 public class Injector {
@@ -21,6 +22,7 @@ public class Injector {
                 .servicesModule(new ServicesModule(application))
                 .networkModule(new NetworkModule())
                 .presenterModule(new PresenterModule())
+                .userModule(new UserModule())
                 .build();
     }
 }

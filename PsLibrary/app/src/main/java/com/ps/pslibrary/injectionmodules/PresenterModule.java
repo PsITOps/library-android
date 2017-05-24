@@ -10,6 +10,7 @@ import pslibrary.api.signup.SignUpApi;
 import pslibrary.customview.DialogProvider;
 import pslibrary.loginactivity.LoginPresenter;
 import pslibrary.registeractivity.RegisterPresenter;
+import pslibrary.user.UserProvider;
 
 @Module
 public class PresenterModule {
@@ -21,8 +22,9 @@ public class PresenterModule {
     public LoginPresenter providesLoginPresenter(LoginApi loginApi,
                                                  Navigator navigator,
                                                  ApplicationScheduler applicationScheduler,
-                                                 DialogProvider dialogProvider) {
-        return new LoginPresenter(loginApi, navigator, applicationScheduler, dialogProvider);
+                                                 DialogProvider dialogProvider,
+                                                 UserProvider userProvider) {
+        return new LoginPresenter(loginApi, navigator, applicationScheduler, dialogProvider, userProvider);
     }
 
     @Provides

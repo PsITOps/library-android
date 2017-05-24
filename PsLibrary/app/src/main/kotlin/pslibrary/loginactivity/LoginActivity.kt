@@ -44,7 +44,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun successLogin() {
-
+        finish()
     }
 
     override fun showProgress() {

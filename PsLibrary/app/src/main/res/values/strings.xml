@@ -1,14 +1,15 @@
 <resources>
     <string name="app_name">PsLibrary</string>
 
-    <string name="log_in_text">Log in</string>
-    <string name="register">Register</string>
-    <string name="input_password">Password</string>
-    <string name="input_username">Username</string>
-    <string name="input_lastname">Lastname</string>
-    <string name="input_name">Name</string>
+    <string name="log_in_text">Zaloguj</string>
+    <string name="register">Rejestracja</string>
+    <string name="input_password">Hasło</string>
+    <string name="input_username">Login</string>
+    <string name="input_lastname">Nazwisko</string>
+    <string name="input_name">Imię</string>
 
-    <string name="register_extra_note">* this field is not necessary</string>
-    <string name="register_success_dialog">You have created your new account!</string>
-    <string name="register_error_dialog">There is problem with internet connection or service has been disabled</string>
+    <string name="register_extra_note">* to pole nie jest obowiązkowe</string>
+    <string name="register_success_dialog">Stworzyłeś nowe konto!</string>
+    <string name="register_error_dialog">Wystąpił problem z połączeniem internetowym bądź serwer jest wyłączony</string>
+    <string name="library_code">Kod bibliotekarza</string>
 </resources>
