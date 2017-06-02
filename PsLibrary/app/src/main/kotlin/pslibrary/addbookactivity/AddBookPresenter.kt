@@ -17,6 +17,7 @@ class AddBookPresenter(val booksApi: BooksApi,
 
     override fun attachView(view: AddBookView?) {
         super.attachView(view)
+        this.view.setBackground()
     }
 
     fun addNewBook(title: String, genre: String, author: String, description: String) {

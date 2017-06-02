@@ -9,7 +9,6 @@ import com.ps.pslibrary.R
 import com.ps.pslibrary.application.LibraryApplication
 import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_add_book.*
-import kotlinx.android.synthetic.main.activity_books.*
 import javax.inject.Inject
 
 class AddBookActivity : AppCompatActivity(), AddBookView {
