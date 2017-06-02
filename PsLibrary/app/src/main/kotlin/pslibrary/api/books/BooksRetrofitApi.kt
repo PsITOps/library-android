@@ -13,4 +13,7 @@ interface BooksRetrofitApi {
     @POST("/api/books/{id|/rent")
     fun rentBook(@Path("id") id: String,
                  @Header("x-access-token") token: String) : Single<BorrowedBookPojo>
+
+    @GET("api/account/books")
+    fun getMyBooks(@Header("x-access-token") token: String) : Single<BooksListPojo>
 }

@@ -7,4 +7,6 @@ public interface Navigator {
     void openRegisterActivity(Context context);
 
     void openBooksActivity(Context context);
+
+    void openMyBooksActivity(Context context);
 }

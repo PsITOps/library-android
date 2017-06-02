@@ -1,4 +1,4 @@
-package pslibrary.booksactivity
+package pslibrary.mybooksactivity
 
 import android.content.Context
 import android.content.Intent
@@ -15,16 +15,15 @@ import pslibrary.booksactivity.adapter.BooksActivityAdapter
 import pslibrary.customview.adapter.ViewType
 import javax.inject.Inject
 
-
-class BooksActivity : AppCompatActivity(), BooksView {
+class MyBooksActivity : AppCompatActivity(), MyBooksView {
 
     @Inject
-    lateinit var booksPresenter: BooksPresenter
+    lateinit var presenter: MyBooksPresenter
 
     private lateinit var bookAdapter: BooksActivityAdapter
 
     companion object Factory {
-        @JvmStatic fun createIntent(context: Context) = Intent(context, BooksActivity::class.java)
+        @JvmStatic fun createIntent(context: Context) = Intent(context, MyBooksActivity::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,24 +35,14 @@ class BooksActivity : AppCompatActivity(), BooksView {
     }
 
     private fun initializeComponents() {
-        booksPresenter.context = this
-        booksPresenter.attachView(this)
-        booksPresenter.showBooksList()
+        presenter.attachView(this)
 
         bookAdapter = BooksActivityAdapter(this)
         book_list.adapter = bookAdapter
         val layoutManager = LinearLayoutManager(this)
         book_list.layoutManager = layoutManager
 
-        my_books_button.setOnClickListener {
-
-        }
-    }
-
-    override fun setBackground() {
-        Glide.with(this).load(R.drawable.library_login_background)
-                .bitmapTransform(BlurTransformation(this, 20))
-                .into(books_background)
+        my_books_button.visibility = View.GONE
     }
 
     override fun showProgress() {
@@ -64,9 +53,12 @@ class BooksActivity : AppCompatActivity(), BooksView {
         books_progress_bar.visibility = View.GONE
     }
 
-    override fun showBookList(items: List<ViewType>) {
-        book_list.visibility = View.VISIBLE
+    override fun setBackground() {
+        Glide.with(this).load(R.drawable.library_login_background)
+                .bitmapTransform(BlurTransformation(this, 20))
+                .into(books_background)
+    }
 
-        bookAdapter.items = items
+    override fun showBookList(items: List<ViewType>) {
     }
 }

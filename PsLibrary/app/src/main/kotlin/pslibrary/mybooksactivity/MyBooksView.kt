@@ -1,8 +1,8 @@
-package pslibrary.booksactivity
+package pslibrary.mybooksactivity
 
 import pslibrary.customview.adapter.ViewType
 
-interface BooksView {
+interface MyBooksView {
 
     fun showProgress()
 

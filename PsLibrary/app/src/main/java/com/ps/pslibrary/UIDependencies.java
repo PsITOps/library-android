@@ -11,6 +11,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import pslibrary.booksactivity.BooksActivity;
+import pslibrary.mybooksactivity.MyBooksActivity;
 import pslibrary.registeractivity.RegisterActivity;
 
 @Singleton
@@ -30,4 +31,6 @@ public interface UIDependencies {
     void inject(RegisterActivity activity);
 
     void inject(BooksActivity activity);
+
+    void inject(MyBooksActivity activity);
 }

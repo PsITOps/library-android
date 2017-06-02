@@ -11,6 +11,7 @@ import pslibrary.api.signup.SignUpApi;
 import pslibrary.booksactivity.BooksPresenter;
 import pslibrary.customview.DialogProvider;
 import pslibrary.loginactivity.LoginPresenter;
+import pslibrary.mybooksactivity.MyBooksPresenter;
 import pslibrary.registeractivity.RegisterPresenter;
 import pslibrary.user.UserProvider;
 
@@ -41,5 +42,12 @@ public class PresenterModule {
                                                  ApplicationScheduler applicationScheduler,
                                                  UserProvider userProvider) {
         return new BooksPresenter(booksApi, applicationScheduler, userProvider);
+    }
+
+    @Provides
+    public MyBooksPresenter providesMyBooksPresenter(BooksApi booksApi,
+                                                     ApplicationScheduler applicationScheduler,
+                                                     UserProvider userProvider) {
+        return new MyBooksPresenter(booksApi, applicationScheduler, userProvider);
     }
 }
