@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun setBackground() {
-        Glide.with(this).load(R.drawable.library_login_background)
+        Glide.with(this).load(R.drawable.library_background)
                 .bitmapTransform(BlurTransformation(this, 20))
                 .into(login_background)
     }

@@ -6,6 +6,7 @@ import pslibrary.api.DynamicUrlService
 import pslibrary.api.books.BooksBackendApi
 import pslibrary.api.books.BooksRetrofitApi
 import pslibrary.api.books.model.BooksListPojo
+import pslibrary.api.books.model.TokenBody
 
 class BooksServiceFeed(client: OkHttpClient) :
         DynamicUrlService<BooksRetrofitApi>(client = client), BooksBackendApi {
@@ -16,8 +17,14 @@ class BooksServiceFeed(client: OkHttpClient) :
     override fun getBooks(userToken: String) =
             restAdapter().getBooks(userToken)
 
-    override fun rentBook(bookId: String, userToken: String) =
-            restAdapter().rentBook(bookId, userToken)
+    override fun rentBook(bookId: String, tokenBody: TokenBody) =
+            restAdapter().rentBook(bookId, tokenBody)
+
+    override fun rentMoreBook(bookId: String, tokenBody: TokenBody) =
+            restAdapter().rentMoreBook(bookId, tokenBody)
+
+    override fun returnBook(bookId: String, tokenBody: TokenBody) =
+            restAdapter().returnBook(bookId, tokenBody)
 
     override fun getGenericParameter() = BooksRetrofitApi::class.java
 }

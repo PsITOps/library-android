@@ -43,4 +43,17 @@
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/add_book_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/black"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:text="Dodaj książkę"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
 </RelativeLayout>

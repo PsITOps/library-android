@@ -5,6 +5,7 @@ import com.ps.pslibrary.application.ApplicationScheduler
 import com.ps.pslibrary.base.BaseMvpPresenter
 import com.ps.pslibrary.navigator.Navigator
 import pslibrary.api.books.BooksApi
+import pslibrary.api.books.converter.BookConverter
 import pslibrary.api.books.model.Book
 import pslibrary.booksactivity.adapter.BookViewType
 import pslibrary.customview.DialogProvider
@@ -32,7 +33,7 @@ class BooksPresenter(val booksApi: BooksApi,
                 {
                     booksView.hideProgress()
                     if (it.valid) {
-                        booksView.showBookList(it.bookList.map { mapBookToBookViewType(it) })
+                        booksView.showBookList(BookConverter.convertBookWithoutNullParams(it.bookList).map { mapBookToBookViewType(it) })
                     } else {
                         dialogProvider.showErrorDialog(context, it.message)
                     }
@@ -54,4 +55,6 @@ class BooksPresenter(val booksApi: BooksApi,
     fun openMyBooksActivity() {
         navigator.openMyBooksActivity(context)
     }
+
+    fun isLibrarian() = userProvider.isLibrarian()
 }

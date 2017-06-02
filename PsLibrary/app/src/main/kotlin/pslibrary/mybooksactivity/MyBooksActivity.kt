@@ -34,6 +34,16 @@ class MyBooksActivity : AppCompatActivity(), MyBooksView {
         initializeComponents()
     }
 
+    override fun onResume() {
+        super.onResume()
+        initializeComponents()
+    }
+
+    override fun onDestroy() {
+        presenter.detachView()
+        super.onDestroy()
+    }
+
     private fun initializeComponents() {
         presenter.context = this
         presenter.attachView(this)
@@ -55,11 +65,14 @@ class MyBooksActivity : AppCompatActivity(), MyBooksView {
     }
 
     override fun setBackground() {
-        Glide.with(this).load(R.drawable.library_login_background)
+        Glide.with(this).load(R.drawable.library_background)
                 .bitmapTransform(BlurTransformation(this, 20))
                 .into(books_background)
     }
 
     override fun showBookList(items: List<ViewType>) {
+        book_list.visibility = View.VISIBLE
+
+        bookAdapter.items = items
     }
 }

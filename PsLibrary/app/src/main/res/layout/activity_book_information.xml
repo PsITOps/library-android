@@ -1,125 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/book_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/book_genre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@android:color/white" />
-
-    <TextView
-        android:id="@+id/book_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@android:color/white" />
-
-    <TextView
-        android:id="@+id/book_author"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@android:color/white" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/white" />
-
-    <RelativeLayout
-        android:id="@+id/borrowed_book_components"
+    <ImageView
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:visibility="gone">
+        android:alpha="0.5"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/give_back_book"
-            android:layout_width="120dp"
+            android:id="@+id/book_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@+id/view_separator"
-            android:layout_toStartOf="@+id/view_separator"
-            android:alpha="0.7"
-            android:background="@color/mainColor"
-            android:padding="4dp"
-            android:text="Oddaj książkę"
+            android:layout_marginTop="15dp"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/book_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/book_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/book_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
 
         <View
-            android:id="@+id/view_separator"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_centerInParent="true" />
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
 
-        <TextView
-            android:id="@+id/rent_more_book"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/view_separator"
-            android:layout_toRightOf="@+id/view_separator"
-            android:alpha="0.7"
-            android:background="@color/mainColor"
-            android:padding="4dp"
-            android:text="Przedłuż rezerwację"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+        <RelativeLayout
+            android:id="@+id/borrowed_book_components"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/give_back_book"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/view_separator"
+                android:layout_toStartOf="@+id/view_separator"
+                android:alpha="0.7"
+                android:background="@color/mainColor"
+                android:padding="4dp"
+                android:text="Oddaj książkę"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <RelativeLayout
-        android:id="@+id/not_borrowed_book_components"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
+            <View
+                android:id="@+id/view_separator"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true" />
 
-        <TextView
-            android:id="@+id/rent_book"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:alpha="0.7"
-            android:background="@color/mainColor"
-            android:padding="7dp"
-            android:text="Rezerwuj książkę"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/rent_more_book"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/view_separator"
+                android:layout_toRightOf="@+id/view_separator"
+                android:alpha="0.7"
+                android:background="@color/mainColor"
+                android:padding="4dp"
+                android:text="Przedłuż rezerwację"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/librarian_controls"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/not_borrowed_book_components"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/rent_book"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:alpha="0.7"
+                android:background="@color/mainColor"
+                android:padding="7dp"
+                android:text="Rezerwuj książkę"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/librarian_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

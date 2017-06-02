@@ -43,7 +43,7 @@ class MyBooksPresenter(val booksApi: BooksApi,
         val bookViewType = BookViewType(book, false, true)
 
         bookViewType.onBookSelection = {
-            navigator.openBookInformationActivity(context, it, false)
+            navigator.openBookInformationActivity(context, it, true)
         }
 
         return bookViewType

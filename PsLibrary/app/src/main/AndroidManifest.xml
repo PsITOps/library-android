@@ -25,6 +25,7 @@
         <activity android:name="pslibrary.registeractivity.RegisterActivity" />
         <activity android:name="pslibrary.booksactivity.BooksActivity" />
         <activity android:name="pslibrary.mybooksactivity.MyBooksActivity" />
+        <activity android:name="pslibrary.bookinformationactivity.BookInformationActivity"/>
 
 
     </application>

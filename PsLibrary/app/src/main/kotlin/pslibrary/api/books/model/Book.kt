@@ -4,12 +4,12 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class Book(@SerializedName("_id") val id : String,
-                @SerializedName("title") val title: String,
-                @SerializedName("genre") val genre: String,
-                @SerializedName("author") val author: String,
-                @SerializedName("Description") val description: String = "",
-                @SerializedName("isAvailable") val isAvailable: Boolean) : Parcelable {
+data class Book(@SerializedName("_id") var id : String,
+                @SerializedName("title") var title: String?,
+                @SerializedName("genre") var genre: String?,
+                @SerializedName("author") var author: String?,
+                @SerializedName("description") var description: String?,
+                @SerializedName("isAvailable") var isAvailable: Boolean) : Parcelable {
 
     companion object {
         @JvmField val CREATOR: Parcelable.Creator<Book> = object : Parcelable.Creator<Book> {
@@ -23,7 +23,7 @@ data class Book(@SerializedName("_id") val id : String,
     source.readString(),
     source.readString(),
     source.readString(),
-    source.readString(),
+    source.readString() ?: "",
     1 == source.readInt()
     )
 
@@ -34,7 +34,7 @@ data class Book(@SerializedName("_id") val id : String,
         dest.writeString(title)
         dest.writeString(genre)
         dest.writeString(author)
-        dest.writeString(description)
+        dest.writeString(description ?: "")
         dest.writeInt((if (isAvailable) 1 else 0))
     }
 }

@@ -37,8 +37,12 @@ class BooksActivity : AppCompatActivity(), BooksView {
 
     override fun onResume() {
         super.onResume()
-
         initializeComponents()
+    }
+
+    override fun onDestroy() {
+        booksPresenter.detachView()
+        super.onDestroy()
     }
 
     private fun initializeComponents() {
@@ -51,13 +55,21 @@ class BooksActivity : AppCompatActivity(), BooksView {
         val layoutManager = LinearLayoutManager(this)
         book_list.layoutManager = layoutManager
 
-        my_books_button.setOnClickListener {
-            booksPresenter.openMyBooksActivity()
+        if (booksPresenter.isLibrarian()) {
+            my_books_button.visibility = View.GONE
+            add_book_button.visibility = View.VISIBLE
+            add_book_button.setOnClickListener {
+
+            }
+        } else {
+            my_books_button.setOnClickListener {
+                booksPresenter.openMyBooksActivity()
+            }
         }
     }
 
     override fun setBackground() {
-        Glide.with(this).load(R.drawable.library_login_background)
+        Glide.with(this).load(R.drawable.library_background)
                 .bitmapTransform(BlurTransformation(this, 20))
                 .into(books_background)
     }

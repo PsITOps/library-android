@@ -34,7 +34,7 @@ class BookDelegateAdapter(override val context: Context) :
             bookTitle?.text = bookViewType.book.title
             bookGenre?.text = bookViewType.book.genre
 
-            if (bookViewType.book.description == null || bookViewType.book.description.isEmpty()) {
+            if (bookViewType.book.description == null) {
                 bookDescription?.visibility = View.GONE
             } else {
                 bookDescription?.visibility = View.VISIBLE

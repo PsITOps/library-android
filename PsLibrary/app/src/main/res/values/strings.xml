@@ -11,5 +11,5 @@
     <string name="register_extra_note">* to pole nie jest obowiązkowe</string>
     <string name="register_success_dialog">Stworzyłeś nowe konto!</string>
     <string name="register_error_dialog">Wystąpił problem z połączeniem internetowym bądź serwer jest wyłączony</string>
-    <string name="library_code">Kod bibliotekarza</string>
+    <string name="library_code">Kod bibliotekarza*</string>
 </resources>
