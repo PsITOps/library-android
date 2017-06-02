@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import pslibrary.api.books.model.Book;
+import pslibrary.bookinformationactivity.BookInformationActivity;
 import pslibrary.booksactivity.BooksActivity;
 import pslibrary.mybooksactivity.MyBooksActivity;
 import pslibrary.registeractivity.RegisterActivity;
@@ -31,6 +33,12 @@ public class AndroidNavigator implements Navigator {
     @Override
     public void openMyBooksActivity(Context context) {
         Intent intent = MyBooksActivity.createIntent(context);
+        context.startActivity(intent);
+    }
+
+    @Override
+    public void openBookInformationActivity(Context context, Book book, boolean isFromMyBooks) {
+        Intent intent = BookInformationActivity.createIntent(context, book, isFromMyBooks);
         context.startActivity(intent);
     }
 }

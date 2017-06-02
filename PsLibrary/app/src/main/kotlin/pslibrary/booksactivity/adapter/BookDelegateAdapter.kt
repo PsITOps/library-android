@@ -31,7 +31,7 @@ class BookDelegateAdapter(override val context: Context) :
             bookAuthor = view.book_author
             bookAvailabilityIcon = view.book_availability_icon
 
-            bookTitle?.text = bookViewType.book.name
+            bookTitle?.text = bookViewType.book.title
             bookGenre?.text = bookViewType.book.genre
 
             if (bookViewType.book.description == null || bookViewType.book.description.isEmpty()) {
@@ -42,7 +42,13 @@ class BookDelegateAdapter(override val context: Context) :
             }
             bookAuthor?.text = bookViewType.book.author
 
-            view.setOnClickListener { bookViewType.onBookSelection.invoke(bookViewType.book) }
+            view.setOnClickListener {
+                if (bookViewType.isFromMyBooks.not() && bookViewType.book.isAvailable.not()) {
+
+                } else {
+                    bookViewType.onBookSelection.invoke(bookViewType.book)
+                }
+            }
 
             controlBookAvailabilityIcon(bookViewType)
 

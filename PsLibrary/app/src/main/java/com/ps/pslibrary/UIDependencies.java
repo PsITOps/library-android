@@ -10,6 +10,7 @@ import com.ps.pslibrary.injectionmodules.UserModule;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import pslibrary.bookinformationactivity.BookInformationActivity;
 import pslibrary.booksactivity.BooksActivity;
 import pslibrary.mybooksactivity.MyBooksActivity;
 import pslibrary.registeractivity.RegisterActivity;
@@ -33,4 +34,6 @@ public interface UIDependencies {
     void inject(BooksActivity activity);
 
     void inject(MyBooksActivity activity);
+
+    void inject(BookInformationActivity activity);
 }

@@ -35,6 +35,12 @@ class BooksActivity : AppCompatActivity(), BooksView {
         initializeComponents()
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        initializeComponents()
+    }
+
     private fun initializeComponents() {
         booksPresenter.context = this
         booksPresenter.attachView(this)
@@ -46,7 +52,7 @@ class BooksActivity : AppCompatActivity(), BooksView {
         book_list.layoutManager = layoutManager
 
         my_books_button.setOnClickListener {
-
+            booksPresenter.openMyBooksActivity()
         }
     }
 

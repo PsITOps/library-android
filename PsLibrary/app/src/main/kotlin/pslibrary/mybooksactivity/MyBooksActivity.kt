@@ -35,6 +35,7 @@ class MyBooksActivity : AppCompatActivity(), MyBooksView {
     }
 
     private fun initializeComponents() {
+        presenter.context = this
         presenter.attachView(this)
 
         bookAdapter = BooksActivityAdapter(this)

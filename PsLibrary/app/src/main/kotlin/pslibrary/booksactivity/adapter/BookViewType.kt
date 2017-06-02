@@ -5,7 +5,8 @@ import pslibrary.customview.adapter.AdapterContentType
 import pslibrary.customview.adapter.ViewType
 
 data class BookViewType(var book: Book,
-                        var isAvailabilityIconVisible: Boolean) : ViewType {
+                        var isAvailabilityIconVisible: Boolean,
+                        var isFromMyBooks: Boolean) : ViewType {
 
     var onBookSelection: (book: Book) -> Unit = {}
 
