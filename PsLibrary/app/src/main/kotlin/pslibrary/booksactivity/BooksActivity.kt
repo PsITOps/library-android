@@ -59,7 +59,7 @@ class BooksActivity : AppCompatActivity(), BooksView {
             my_books_button.visibility = View.GONE
             add_book_button.visibility = View.VISIBLE
             add_book_button.setOnClickListener {
-
+                booksPresenter.openAddBookActivity()
             }
         } else {
             my_books_button.setOnClickListener {

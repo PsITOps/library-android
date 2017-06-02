@@ -13,4 +13,6 @@ public interface Navigator {
     void openMyBooksActivity(Context context);
 
     void openBookInformationActivity(Context context, Book book, boolean isFromMyBooks);
+
+    void openAddBookActivity(Context context);
 }

@@ -5,6 +5,7 @@ import okhttp3.OkHttpClient
 import pslibrary.api.DynamicUrlService
 import pslibrary.api.books.BooksBackendApi
 import pslibrary.api.books.BooksRetrofitApi
+import pslibrary.api.books.model.AddBookBody
 import pslibrary.api.books.model.BooksListPojo
 import pslibrary.api.books.model.TokenBody
 
@@ -25,6 +26,9 @@ class BooksServiceFeed(client: OkHttpClient) :
 
     override fun returnBook(bookId: String, tokenBody: TokenBody) =
             restAdapter().returnBook(bookId, tokenBody)
+
+    override fun addNewBook(addBookBody: AddBookBody) =
+            restAdapter().addNewBook(addBookBody)
 
     override fun getGenericParameter() = BooksRetrofitApi::class.java
 }

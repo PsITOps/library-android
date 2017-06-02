@@ -24,5 +24,8 @@ interface BooksRetrofitApi {
     @GET("api/account/books")
     fun getMyBooks(@Header("x-access-token") token: String): Single<BooksListPojo>
 
+    @POST("api/books")
+    fun addNewBook(@Body addBookBody: AddBookBody): Single<AddBookPojo>
+
 
 }

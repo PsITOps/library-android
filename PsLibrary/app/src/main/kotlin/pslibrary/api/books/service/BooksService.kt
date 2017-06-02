@@ -3,6 +3,8 @@ package pslibrary.api.books.service
 import io.reactivex.Single
 import pslibrary.api.books.BooksApi
 import pslibrary.api.books.BooksBackendApi
+import pslibrary.api.books.model.AddBookBody
+import pslibrary.api.books.model.AddBookPojo
 import pslibrary.api.books.model.BooksListPojo
 import pslibrary.api.books.model.TokenBody
 
@@ -22,4 +24,7 @@ class BooksService(val booksBackendApi: BooksBackendApi) : BooksApi {
 
     override fun rentBook(bookId: String, tokenBody: TokenBody) =
             booksBackendApi.rentBook(bookId, tokenBody)
+
+    override fun addNewBook(addBookBody: AddBookBody) =
+            booksBackendApi.addNewBook(addBookBody)
 }

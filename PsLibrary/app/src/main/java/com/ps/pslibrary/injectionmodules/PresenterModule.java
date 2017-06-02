@@ -5,6 +5,7 @@ import com.ps.pslibrary.navigator.Navigator;
 
 import dagger.Module;
 import dagger.Provides;
+import pslibrary.addbookactivity.AddBookPresenter;
 import pslibrary.api.books.BooksApi;
 import pslibrary.api.login.LoginApi;
 import pslibrary.api.signup.SignUpApi;
@@ -62,5 +63,13 @@ public class PresenterModule {
                                                                      ApplicationScheduler applicationScheduler,
                                                                      UserProvider userProvider) {
         return new BookInformationPresenter(booksApi, applicationScheduler, dialogProvider, userProvider);
+    }
+
+    @Provides
+    public AddBookPresenter providesAddBookPresentet(BooksApi booksApi,
+                                                     DialogProvider dialogProvider,
+                                                     ApplicationScheduler applicationScheduler,
+                                                     UserProvider userProvider) {
+        return new AddBookPresenter(booksApi, applicationScheduler, dialogProvider, userProvider);
     }
 }

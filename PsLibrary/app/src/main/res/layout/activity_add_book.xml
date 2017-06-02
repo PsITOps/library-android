@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/add_book_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="140dp"
+        android:alpha="0.5"
+        android:background="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/add_book_background"
+        app:layout_constraintRight_toRightOf="@+id/add_book_background"
+        app:layout_constraintTop_toTopOf="@+id/add_book_background" />
+
+    <EditText
+        android:id="@+id/title_input"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:background="@null"
+        android:hint="@string/input_name"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintLeft_toRightOf="@+id/imageView"
+        app:layout_constraintRight_toRightOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/ic_personal_data"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.5"
+        android:background="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/add_book_background"
+        app:layout_constraintRight_toRightOf="@+id/add_book_background"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <EditText
+        android:id="@+id/genre_input"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:background="@null"
+        android:hint="@string/input_lastname"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintLeft_toRightOf="@+id/imageView1"
+        app:layout_constraintRight_toRightOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/ic_personal_data"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintLeft_toLeftOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.5"
+        android:background="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/add_book_background"
+        app:layout_constraintRight_toRightOf="@+id/add_book_background"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+    <EditText
+        android:id="@+id/author_input"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:background="@null"
+        android:hint="@string/input_username"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintLeft_toRightOf="@+id/imageView2"
+        app:layout_constraintRight_toRightOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/ic_login"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintLeft_toLeftOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.5"
+        android:background="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/add_book_background"
+        app:layout_constraintRight_toRightOf="@+id/add_book_background"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <EditText
+        android:id="@+id/description_input"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:background="@null"
+        android:hint="@string/input_password"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintLeft_toRightOf="@+id/imageView3"
+        app:layout_constraintRight_toRightOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/ic_password"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintLeft_toLeftOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/register_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:alpha="0.7"
+        android:background="@color/mainColor"
+        android:padding="8dp"
+        android:text="@string/register"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/view2"
+        app:layout_constraintRight_toRightOf="@+id/description_input"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+
+</android.support.constraint.ConstraintLayout>

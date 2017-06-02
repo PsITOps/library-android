@@ -15,4 +15,6 @@ interface BooksApi {
     fun returnBook(bookId: String, tokenBody: TokenBody) : Single<BookReturnPojo>
 
     fun getMyBooks(userToken: String) : Single<BooksListPojo>
+
+    fun addNewBook(addBookBody: AddBookBody): Single<AddBookPojo>
 }
