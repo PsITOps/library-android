@@ -44,8 +44,8 @@ public class AndroidNavigator implements Navigator {
     }
 
     @Override
-    public void openAddBookActivity(Context context) {
-        Intent intent = AddBookActivity.createIntent(context);
+    public void openAddBookActivity(Context context, Book book) {
+        Intent intent = AddBookActivity.createIntent(context, book);
         context.startActivity(intent);
     }
 }

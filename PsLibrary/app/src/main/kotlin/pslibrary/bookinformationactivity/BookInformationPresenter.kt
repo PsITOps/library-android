@@ -3,6 +3,7 @@ package pslibrary.bookinformationactivity
 import android.content.Context
 import com.ps.pslibrary.application.ApplicationScheduler
 import com.ps.pslibrary.base.BaseMvpPresenter
+import com.ps.pslibrary.navigator.Navigator
 import pslibrary.api.books.BooksApi
 import pslibrary.api.books.model.Book
 import pslibrary.api.books.model.TokenBody
@@ -12,6 +13,7 @@ import pslibrary.user.UserProvider
 class BookInformationPresenter(val booksApi: BooksApi,
                                val scheduler: ApplicationScheduler,
                                val dialogProvider: DialogProvider,
+                               val navigator: Navigator,
                                val userProvider: UserProvider) : BaseMvpPresenter<BookInformationView>() {
 
     var selectedBook: Book? = null
@@ -28,10 +30,14 @@ class BookInformationPresenter(val booksApi: BooksApi,
     }
 
     private fun determineWhichControlsShouldBeShown() {
-        if (isFromMyBooks) {
-            view.showBorrowedBookOptions()
+        if (userProvider.isLibrarian()) {
+            view.showLibrarianBookOptions()
         } else {
-            view.showToBeBorrowedBookOptions()
+            if (isFromMyBooks) {
+                view.showBorrowedBookOptions()
+            } else {
+                view.showToBeBorrowedBookOptions()
+            }
         }
     }
 
@@ -71,6 +77,27 @@ class BookInformationPresenter(val booksApi: BooksApi,
                     }
                 },
                 { dialogProvider.showErrorDialog(context, "Nie udało się oddać książki", onDismissDialog(), onDismissDialog()) },
+                this)
+    }
+
+    fun editBook() {
+        openAddBookActivity()
+    }
+
+    fun openAddBookActivity() {
+        navigator.openAddBookActivity(context, selectedBook)
+    }
+
+    fun deleteBook() {
+        scheduler.schedule(booksApi.deleteBook(selectedBook!!.id, TokenBody(userProvider.getUserToken())),
+                {
+                    if (it.valid) {
+                        dialogProvider.showSuccessDialog(context, "Udało się skasować książkę", onRentBookSuccessDismiss(), onRentBookSuccessDismiss())
+                    } else {
+                        dialogProvider.showErrorDialog(context, it.message, onDismissDialog(), onDismissDialog())
+                    }
+                },
+                { dialogProvider.showErrorDialog(context, "Nie udało się skasować książki", onDismissDialog(), onDismissDialog()) },
                 this)
     }
 

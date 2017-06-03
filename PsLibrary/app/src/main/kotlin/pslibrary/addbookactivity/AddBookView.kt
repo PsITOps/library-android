@@ -6,4 +6,6 @@ interface AddBookView {
 
     fun onBackActivity()
 
+    fun setEditBookComponents(title: String, genre: String, author: String, description: String)
+
 }

@@ -61,8 +61,9 @@ public class PresenterModule {
     public BookInformationPresenter providesBookInformationPresenter(BooksApi booksApi,
                                                                      DialogProvider dialogProvider,
                                                                      ApplicationScheduler applicationScheduler,
+                                                                     Navigator navigator,
                                                                      UserProvider userProvider) {
-        return new BookInformationPresenter(booksApi, applicationScheduler, dialogProvider, userProvider);
+        return new BookInformationPresenter(booksApi, applicationScheduler, dialogProvider, navigator, userProvider);
     }
 
     @Provides

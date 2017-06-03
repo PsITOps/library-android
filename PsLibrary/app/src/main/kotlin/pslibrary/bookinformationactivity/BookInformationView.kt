@@ -6,6 +6,8 @@ interface BookInformationView {
 
     fun showToBeBorrowedBookOptions()
 
+    fun showLibrarianBookOptions()
+
     fun setBackground()
 
     fun onBackActivity()

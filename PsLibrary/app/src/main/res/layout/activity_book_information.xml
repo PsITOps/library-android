@@ -130,8 +130,49 @@
         <RelativeLayout
             android:id="@+id/librarian_controls"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/edit_book"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/view_separator1"
+                android:layout_toStartOf="@+id/view_separator1"
+                android:alpha="0.7"
+                android:background="@color/mainColor"
+                android:padding="4dp"
+                android:text="Edytuj książkę"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view_separator1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:id="@+id/delete_book"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/view_separator1"
+                android:layout_toRightOf="@+id/view_separator1"
+                android:alpha="0.7"
+                android:background="@color/mainColor"
+                android:padding="4dp"
+                android:text="Skasuj książkę"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

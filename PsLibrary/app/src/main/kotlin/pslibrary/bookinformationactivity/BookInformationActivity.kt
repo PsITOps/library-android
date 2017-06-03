@@ -71,6 +71,12 @@ class BookInformationActivity : AppCompatActivity(), BookInformationView {
         rent_book.setOnClickListener { presenter.rentBook() }
     }
 
+    override fun showLibrarianBookOptions() {
+        librarian_controls.visibility = View.VISIBLE
+        edit_book.setOnClickListener { presenter.editBook() }
+        delete_book.setOnClickListener { presenter.deleteBook() }
+    }
+
     override fun setBackground() {
         Glide.with(this).load(R.drawable.library_background)
                 .bitmapTransform(BlurTransformation(this, 20))
