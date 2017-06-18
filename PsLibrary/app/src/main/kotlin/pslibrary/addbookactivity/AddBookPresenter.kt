@@ -22,7 +22,7 @@ class AddBookPresenter(val booksApi: BooksApi,
         super.attachView(view)
         this.view.setBackground()
 
-        if (selectedBook != null) {
+        if (selectedBook != null && selectedBook!!.title!!.isNotEmpty()) {
             this.view.setEditBookComponents(selectedBook!!.title!!, selectedBook!!.genre!!, selectedBook!!.author!!, selectedBook!!.description!!)
         }
     }

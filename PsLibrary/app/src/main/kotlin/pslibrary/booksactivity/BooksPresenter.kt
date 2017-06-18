@@ -57,7 +57,7 @@ class BooksPresenter(val booksApi: BooksApi,
     }
 
     fun openAddBookActivity() {
-        navigator.openAddBookActivity(context, null)
+        navigator.openAddBookActivity(context, Book("", "", "", "", "", true))
     }
 
     fun isLibrarian() = userProvider.isLibrarian()
